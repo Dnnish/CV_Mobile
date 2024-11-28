@@ -1,0 +1,93 @@
+.expandable-container {
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+    max-height: 130px;
+    width: 160px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.expandable-container.expanded {
+    max-height: 300px;
+    width: 99%;
+}
+.hidden {
+    opacity: 0;
+    transform: scale(0.1);
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+}
+.extra-info {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.expandable-container.expanded .extra-info {
+    opacity: 1;
+}
+img {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+.expandable-container + .expandable-container {
+    margin-top: 15px;
+}
+.expandable-container img{
+    margin-top: -35px;
+    max-width: 10%; 
+    height: auto;
+}
+.row > .col {
+    margin-bottom: 5px;
+}
+nav {
+    display: none;
+    background-color: #343a40;
+    padding: 10px;
+}
+nav a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+nav.show {
+    display: block;
+}
+
+
+
+
+.icon {
+    font-family: "Font Awesome 5 Free"; /* Asegúrate de incluir Font Awesome */
+    font-weight: 900; /* Para usar iconos sólidos */
+    content: "\f5e4"; /* Código del icono del coche */
+    font-size: 3rem; /* Tamaño del icono */
+    visibility: hidden;
+    animation-duration: 500ms;
+}
+
+.animated-icon {
+    visibility: visible;
+    animation: slide-in-right 0.6s ease-in-out;
+}
+
+@keyframes slide-in-right {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,137 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/movilCss.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>CV Dennis</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <header class="bg-primary text-white text-center p-3">
+            <h1>Mi Página Móvil</h1>
+        </header>
+        <main>
+            <div class="container d-flex justify-content-center align-items-center">
+                
+                <img src="../img/yoChill.jpg" class="rounded-circle" alt="img" style="max-width: 50%; height: auto;">
+                       
+            </div>
+            <p class="text-center">Chill de cojones.</p>
+        </main>
+    </div>
+    <!--Esto es la parte de prueba-->
+    <style>
+        .expandable-container {
+        transition: all 0.3s ease-in-out;
+        overflow: hidden;
+        max-height: 100px; /* Altura inicial más pequeña */
+        width: 150px; /* Opcional: define un ancho específico */
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+        padding: 50px;
+        cursor: pointer;
+        display: flex; /* Centrar el contenido */
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .expandable-container.expanded {
+            max-height: 300px; /* Altura expandida */
+            width: 99%;
+        }
+
+        .extra-info {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .expandable-container.expanded .extra-info {
+            opacity: 1;
+        }
+        img {
+            max-width: 50%;
+            height: auto;
+        }
+        
+        .expandable-container + .expandable-container {
+                margin-top: 15px;
+        }
+
+        .row > .col {
+                margin-bottom: 15px;
+        }
+        /*.centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }*/
+    </style>
+    <div class="container my-5">
+        <div class="row m-2">
+            <div class="col">
+                <div class="expandable-container ">
+                    <img src="../img/githublogo.png" class="rounded-circle" alt="img" style="max-width: 100px; height: 100px;"/>
+                    <div class="extra-info">
+                        <h5>Información Adicional</h5>
+                        <p>
+                            Aquí está el contenido adicional que aparece al expandir el contenedor. Puedes incluir cualquier tipo de información, como texto, imágenes o enlaces.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="expandable-container ">
+                    <h4 class="mb-2">Información Básica</h4>
+                    <p>Esto es una descripción breve. Haz clic para ver más información.</p>
+                    <div class="extra-info">
+                        <h5>Información Adicional</h5>
+                        <p>
+                            Aquí está el contenido adicional que aparece al expandir el contenedor. Puedes incluir cualquier tipo de información, como texto, imágenes o enlaces.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col">
+                <div class="expandable-container ">
+                    <h4 class="mb-3">Información Básica</h4>
+                    <p>Esto es una descripción breve. Haz clic para ver más información.</p>
+                    <div class="extra-info">
+                        <h5>Información Adicional</h5>
+                        <p>
+                            Aquí está el contenido adicional que aparece al expandir el contenedor. Puedes incluir cualquier tipo de información, como texto, imágenes o enlaces.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="expandable-container ">
+                    <h4 class="mb-2">Información Básica</h4>
+                    <p>Esto es una descripción breve. Haz clic para ver más información.</p>
+                    <div class="extra-info">
+                        <h5>Información Adicional</h5>
+                        <p>
+                            Aquí está el contenido adicional que aparece al expandir el contenedor. Puedes incluir cualquier tipo de información, como texto, imágenes o enlaces.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>       
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Selecciona todos los elementos con la clase "expandable-container"
+        const containers = document.querySelectorAll('.expandable-container');
+        // Itera sobre cada contenedor y agrega un evento 'click'
+        containers.forEach(container => {
+            container.addEventListener('click', function () {
+                this.classList.toggle('expanded');
+            });
+        });
+    </script>
+</body>
+</html>
