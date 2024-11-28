@@ -1,9 +1,10 @@
+
 .expandable-container {
     transition: all 0.5s ease-in-out;
     overflow: hidden;
     max-height: 130px;
     width: 160px;
-    background-color: #f8f9fa;
+    background-color: #FFCE46;
     border: 1px solid #ddd;
     padding: 50px;
     cursor: pointer;
@@ -11,16 +12,36 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    border-radius: 10%;
+    
 }
 .expandable-container.expanded {
+    margin-top: -30px;
     max-height: 300px;
-    width: 99%;
+    width: 100%;
+    flex-direction: column;
+}
+.container-guapo{
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+    max-height: 130px;
+    width: 160px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10%;
 }
 .hidden {
     opacity: 0;
     transform: scale(0.1);
     transition: all 0.3s ease-in-out;
     pointer-events: none;
+    display: none;
 }
 .extra-info {
     opacity: 0;
@@ -35,11 +56,11 @@ img {
     display: block;
     margin: auto;
 }
-.expandable-container + .expandable-container {
+/*.expandable-container + .expandable-container {
     margin-top: 15px;
-}
-.expandable-container img{
-    margin-top: -35px;
+}*/
+.expandable-guapo img{
+    /*margin-top: -80px;*/
     max-width: 10%; 
     height: auto;
 }
@@ -47,34 +68,30 @@ img {
     margin-bottom: 5px;
 }
 nav {
-    display: none;
-    background-color: #343a40;
+    background-color: #E09F00;
     padding: 10px;
+    position: relative;
+    opacity: 0; 
+    transform: translateY(-20px);
+    transition: all 0.5s ease-in-out; 
 }
+
 nav a {
     color: white;
     margin-right: 15px;
     text-decoration: none;
     font-weight: bold;
 }
+
 nav a:hover {
     text-decoration: underline;
 }
+
 nav.show {
-    display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
-
-
-
-.icon {
-    font-family: "Font Awesome 5 Free"; /* Asegúrate de incluir Font Awesome */
-    font-weight: 900; /* Para usar iconos sólidos */
-    content: "\f5e4"; /* Código del icono del coche */
-    font-size: 3rem; /* Tamaño del icono */
-    visibility: hidden;
-    animation-duration: 500ms;
-}
 
 .animated-icon {
     visibility: visible;

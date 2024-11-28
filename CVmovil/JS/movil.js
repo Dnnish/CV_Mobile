@@ -2,28 +2,29 @@
 const containers = document.querySelectorAll('.expandable-container');
 const navbar = document.getElementById('navbar');
 const navLinks = document.querySelectorAll('#navbar a');
+// Referencia al body para cambiar su fondo
+const body = document.body; 
 
-// Mostrar y controlar los contenedores
+
+
 containers.forEach((container, index) => {
     container.addEventListener('click', function () {
-        // Muestra la barra de navegación
         navbar.classList.add('show');
 
-        // Oculta todos los demás contenedores
         containers.forEach(otherContainer => {
             if (otherContainer !== this) {
-                otherContainer.classList.add('hidden'); // Oculta los demás
+                otherContainer.classList.add('hidden'); 
             }
         });
 
-        // Alterna la clase 'expanded' para el contenedor clicado
         this.classList.toggle('expanded');
 
-        // Si el contenedor clicado se contrae, muestra los demás y oculta la barra
+        CambiarDeImagen(index);
+
         if (!this.classList.contains('expanded')) {
-            navbar.classList.remove('show'); // Oculta la barra de navegación
+            navbar.classList.remove('show');
             containers.forEach(otherContainer => {
-                otherContainer.classList.remove('hidden'); // Muestra los demás
+                otherContainer.classList.remove('hidden'); 
             });
         }
     });
@@ -34,11 +35,12 @@ navLinks.forEach(link => {
     link.addEventListener('click', function (e) {
         e.preventDefault();
         const targetIndex = this.getAttribute('data-target');
-        
+
         containers.forEach((container, index) => {
             if (index == targetIndex) {
                 container.classList.add('expanded');
                 container.classList.remove('hidden');
+                CambiarDeImagen(index);
             } else {
                 container.classList.remove('expanded');
                 container.classList.add('hidden');
@@ -46,3 +48,21 @@ navLinks.forEach(link => {
         });
     });
 });
+
+function CambiarDeImagen(index){
+    switch (index) {
+        case 0:
+            body.style.backgroundImage = "url('/img/rojoNegro.jpg')";
+            body.style.backgroundSize = "cover";
+            body.style.backgroundPosition = "center"; 
+            break;
+        case 1:
+            body.style.backgroundImage = "url('/img/azulNegro.jpg')";
+            body.style.backgroundSize = "cover";
+            body.style.backgroundPosition = "center"; 
+            break;
+        default:
+            body.style.backgroundColor = "#FFFFFF";
+            break;
+    }
+};

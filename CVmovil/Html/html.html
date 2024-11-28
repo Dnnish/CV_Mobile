@@ -3,38 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Carousel</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Cambio de Palabras</title>
+    <style>
+        .text-flip {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-        <div class="carousel-inner">
-            <!-- Slide 1 -->
-            <div class="carousel-item active">
-                <img src="/img/capibara.jpg" class="d-block w-100" style="max-width: 50%; height: auto; display: block; margin: auto;" alt="Slide 1">
-            </div>
-            <!-- Slide 2 -->
-            <div class="carousel-item">
-                <img src="/img/FinoSeñores.jpg" class="d-block w-100" style="max-width: 50%; height: auto; display: block;" alt="Slide 2">
-            </div>
-            <!-- Slide 3 -->
-            <div class="carousel-item">
-                <img src="/img/yoChill.jpg" class="d-block w-100" style="max-width: 50%; height: auto; display: block;" alt="Slide 3">
-            </div>
+    <div class="container">
+        <h1 class="text-center mt-5">Palabras cambiando dinámicamente</h1>
+        <div class="text-flip text-primary">
+            <span id="changing-words">Inicial</span>
         </div>
-        <!-- Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
 
-    <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Lista de palabras a mostrar
+        const words = ["Bootstrap", "JavaScript", "HTML", "CSS", "Responsive"];
+        const wordElement = document.getElementById("changing-words");
+
+        let currentIndex = 0;
+
+        // Cambia las palabras cada 5 segundos
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % words.length; // Avanza al siguiente índice
+            wordElement.textContent = words[currentIndex]; // Cambia el texto
+        }, 5000);
+    </script>
 </body>
 </html>
